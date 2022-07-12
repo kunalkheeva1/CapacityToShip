@@ -1,5 +1,24 @@
 public class CapacityToShip {
 
+    static boolean check(int [] arr, int n, int d, int mid){
+        int count = 1;
+        int weight = 0;
+        for(int i= 0; i<n; i++){
+        if(weight + arr[i]<=mid){
+            weight +=  arr[i];
+        }
+        else{
+            count++;
+            weight = arr[i];
+        }
+
+    }
+        if(count<= d){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
 
     public static int capacityToShipInDDays(int [] arr, int n, int d){
